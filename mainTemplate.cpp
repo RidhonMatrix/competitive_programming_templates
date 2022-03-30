@@ -18,7 +18,8 @@ using namespace std;
 #define deb2(x, y)   cout << #x << "=" << x << "," << #y << "=" << y << endl
 #define IOS          ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 #define endl         '\n'
-#define for0(n) for (int i = 0; i < (int)(n); ++i)
+#define for0(n)      for(int i = 0; i < (int)(n); ++i)
+#define MapPnt(a)    {for(auto it: a){ cout<<it.first<<": "<<it.second<<endl;} cout<<endl;}
 
 template<class T> T MIN3(T a,T b,T c) {return min(a,min(b,c));} /// minimum of 3 number
 template<class T> T MAX3(T a,T b,T c) {return max(a,max(b,c));} ///maximum of 3 number
@@ -40,9 +41,9 @@ int main()
 {
     #ifndef ONLINE_JUDGE
     freopen("in.txt", "r", stdin);
-    freopen("out.txt", "w", stdout);
+    //freopen("out.txt", "w", stdout);
     #endif
-    
+    IOS
     int tc = 1;
     //cin >> tc;
     for (int t = 1; t <= tc; t++) {
