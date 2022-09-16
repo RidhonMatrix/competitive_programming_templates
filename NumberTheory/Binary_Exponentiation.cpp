@@ -5,13 +5,11 @@ using namespace std;
 
 ll power(ll a,ll n){
     ll res=1;
-    
     while(n){
         if(n%2){
             res*=a;
             n--;
-        }
-        else{
+        }else{
             a*=a;
             n/=2;
         }
