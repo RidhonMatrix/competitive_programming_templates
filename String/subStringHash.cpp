@@ -3,42 +3,28 @@ using namespace std;
 
 #define F first
 #define S second
-
-const int N = 1e6 + 9;
-const int p1 = 137, mod1 = 1e9 + 7;
-const int p2 = 277, mod2 = 1e9 + 9;
-
-int power(long long n, long long k, int mod)
-{
-    int ans = 1 % mod;
-    n %= mod;
-    if (n < 0)
-        n += mod;
-    while (k)
-    {
-        if (k & 1)
-            ans = (long long)ans * n % mod;
+const int N = 5e4 + 9, p1 = 277, mod1 = 1e9 + 7, p2 = 277, mod2 = 1e9 + 9;
+int power(long long n, long long k, int mod){
+    int ans = 1 % mod; n %= mod;
+    if (n < 0)  n += mod;
+    while (k){
+        if (k & 1)  ans = (long long)ans * n % mod;
         n = (long long)n * n % mod;
         k >>= 1;
-    }
-    return ans;
+    } return ans;
 }
-
 int ip1, ip2;
 pair<int, int> pw[N], ipw[N];
-void prec()
-{
+void prec(){
     pw[0] = {1, 1};
-    for (int i = 1; i < N; i++)
-    {
+    for (int i = 1; i < N; i++){
         pw[i].F = 1LL * pw[i - 1].F * p1 % mod1;
         pw[i].S = 1LL * pw[i - 1].S * p2 % mod2;
     }
     ip1 = power(p1, mod1 - 2, mod1);
     ip2 = power(p2, mod2 - 2, mod2);
     ipw[0] = {1, 1};
-    for (int i = 1; i < N; i++)
-    {
+    for (int i = 1; i < N; i++){
         ipw[i].F = 1LL * ipw[i - 1].F * ip1 % mod1;
         ipw[i].S = 1LL * ipw[i - 1].S * ip2 % mod2;
     }
