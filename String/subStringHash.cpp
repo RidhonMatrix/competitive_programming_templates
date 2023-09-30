@@ -3,7 +3,7 @@ using namespace std;
 
 #define F first
 #define S second
-const int N = 5e4 + 9, p1 = 277, mod1 = 1e9 + 7, p2 = 277, mod2 = 1e9 + 9;
+const int N = 1e6 + 9, p1 = 137, mod1 = 1e9 + 7, p2 = 277, mod2 = 1e9 + 9;
 int power(long long n, long long k, int mod){
     int ans = 1 % mod; n %= mod;
     if (n < 0)  n += mod;
